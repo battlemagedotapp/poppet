@@ -10,7 +10,6 @@
 		"typecheck": "tsgo --noEmit -p tsconfig.json"
 	},
 	"devDependencies": {
-		"@strawdev/poppet-config": "workspace:*",
-		"tailwindcss": "^4.0.0"
+		"@strawdev/poppet-config": "workspace:*"
 	}
 }

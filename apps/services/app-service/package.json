@@ -6,7 +6,7 @@
 		".": "./src/index.ts"
 	},
 	"scripts": {
-		"dev": "tsx --env-file=../../../.env.local src/index.ts",
+		"dev": "node --experimental-strip-types --env-file=../../../.env.local src/index.ts",
 		"build": "esbuild src/index.ts --bundle --platform=node --format=esm --outfile=dist/index.js --target=node22 --packages=external && esbuild src/migrate.ts --bundle --platform=node --format=esm --outfile=dist/db/migrate.js --target=node22 --packages=external",
 		"start": "node dist/index.js",
 		"db:generate": "drizzle-kit generate",
@@ -14,20 +14,7 @@
 		"typecheck": "tsgo --noEmit -p tsconfig.json",
 		"test": "vitest run"
 	},
-	"dependencies": {
-		"@hono/node-server": "^1.13.7",
-		"drizzle-orm": "^0.39.0",
-		"hono": "^4.6.14",
-		"pg": "^8.11.3",
-		"zod": "^4.4.2"
-	},
 	"devDependencies": {
-		"@strawdev/poppet-config": "workspace:*",
-		"@types/node": "^22.10.2",
-		"@types/pg": "^8.11.4",
-		"drizzle-kit": "^0.30.0",
-		"esbuild": "^0.28.0",
-		"tsx": "^4.19.2",
-		"typescript": "^5.9.3"
+		"@strawdev/poppet-config": "workspace:*"
 	}
 }

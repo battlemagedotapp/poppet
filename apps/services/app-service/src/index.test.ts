@@ -1,6 +1,6 @@
 import { expect, test } from "vitest"
 
-import app from "./index"
+import app from "./index.ts"
 
 test("GET /api/ping returns hello world", async () => {
 	const res = await app.request("/api/ping")

@@ -8,9 +8,6 @@
 	"scripts": {
 		"typecheck": "tsgo --noEmit -p tsconfig.json"
 	},
-	"dependencies": {
-		"hono": "^4.6.14"
-	},
 	"devDependencies": {
 		"@strawdev/app-service": "workspace:*",
 		"@strawdev/poppet-config": "workspace:*"

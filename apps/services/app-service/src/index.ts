@@ -2,9 +2,9 @@ import { serve } from "@hono/node-server"
 import { Hono } from "hono"
 import { cors } from "hono/cors"
 
-import { db } from "./db"
-import { env } from "./env"
-import { messages } from "./schema"
+import { db } from "./db.ts"
+import { env } from "./env.ts"
+import { messages } from "./schema.ts"
 
 const app = new Hono().basePath("/api")
 
