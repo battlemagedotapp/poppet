@@ -1,0 +1,22 @@
+{
+	"$schema": "./node_modules/oxfmt/configuration_schema.json",
+	"useTabs": true,
+	"tabWidth": 2,
+	"printWidth": 100,
+	"semi": false,
+	"trailingComma": "es5",
+	"sortImports": {},
+	"sortTailwindcss": {
+		"functions": ["clsx", "cva", "cn"]
+	},
+	"ignorePatterns": [
+		"docs/**",
+		"spec/**",
+		"dist/**",
+		"apps/*/dist/**",
+		"packages/*/dist/**",
+		"report/**",
+		"pnpm-lock.yaml",
+		"**/routeTree.gen.ts"
+	]
+}

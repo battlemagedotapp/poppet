@@ -1,0 +1,16 @@
+{
+	"name": "@strawdev/ui",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./style.css": "./src/style.css",
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"typecheck": "tsgo --noEmit -p tsconfig.json"
+	},
+	"devDependencies": {
+		"@strawdev/poppet-config": "workspace:*",
+		"tailwindcss": "^4.0.0"
+	}
+}

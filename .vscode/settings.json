@@ -1,0 +1,45 @@
+{
+	"editor.defaultFormatter": "oxc.oxc-vscode",
+	"js/ts.experimental.useTsgo": true,
+	"oxc.fmt.configPath": ".oxfmtrc.json",
+	"editor.formatOnSave": true,
+	"editor.formatOnSaveMode": "file",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.oxc": "always"
+	},
+	"editor.quickSuggestions": {
+		"strings": true
+	},
+	"files.associations": {
+		"*.css": "tailwindcss"
+	},
+	"files.readonlyInclude": {
+		"**/routeTree.gen.ts": true,
+		"pnpm-lock.yaml": true
+	},
+	"files.watcherExclude": {
+		"**/routeTree.gen.ts": true,
+		"**/.turbo/**": true,
+		"**/.cache/**": true,
+		"**/coverage/**": true,
+		"**/dist/**": true,
+		"**/build/**": true,
+		"**/node_modules/**": true,
+		".pnpm-store/**": true
+	},
+	"search.exclude": {
+		"**/routeTree.gen.ts": true,
+		"pnpm-lock.yaml": true,
+		"**/.turbo/**": true,
+		"**/.cache/**": true,
+		"**/coverage/**": true,
+		"**/build/**": true,
+		"**/dist/**": true,
+		"**/node_modules/**": true,
+		".pnpm-store/**": true
+	},
+	"tailwindCSS.lint.suggestCanonicalClasses": "ignore",
+	"[yaml]": {
+		"editor.defaultFormatter": "redhat.vscode-yaml"
+	}
+}

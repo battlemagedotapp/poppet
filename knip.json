@@ -1,0 +1,26 @@
+{
+	"$schema": "https://unpkg.com/knip@6/schema.json",
+	"entry": ["apps/*/src/main.tsx", "apps/*/src/routes/**/*.{ts,tsx}", "package.json", "turbo.json"],
+	"project": [
+		"apps/**/*.{ts,tsx,js,jsx}",
+		"packages/**/*.{ts,tsx,js,jsx}",
+		"*.{js,mjs,cjs,ts,json}"
+	],
+	"ignore": ["**/dist/**", ".turbo/**"],
+	"ignoreDependencies": [
+		"buffer",
+		"events",
+		"@tanstack/router-plugin",
+		"@types/react",
+		"@types/react-dom",
+		"@typescript/native-preview",
+		"@vitejs/plugin-react",
+		"jsdom",
+		"vite",
+		"vitest",
+		"@strawdev/poppet-config",
+		"@tailwindcss/vite",
+		"tailwindcss"
+	],
+	"ignoreExportsUsedInFile": true
+}

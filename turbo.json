@@ -1,0 +1,29 @@
+{
+	"$schema": "https://turbo.build/schema.json",
+	"globalDependencies": [
+		"tsconfig.json",
+		".oxlintrc.json",
+		"package.json",
+		"packages/core/config/**"
+	],
+	"tasks": {
+		"dev": {
+			"cache": false,
+			"persistent": true
+		},
+		"build": {
+			"dependsOn": ["^build"],
+			"outputs": ["dist/**"],
+			"env": ["VITE_*"]
+		},
+		"typecheck": {
+			"outputs": []
+		},
+		"lint": {
+			"outputs": []
+		},
+		"test": {
+			"outputs": []
+		}
+	}
+}

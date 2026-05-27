@@ -1,0 +1,41 @@
+{
+	"name": "@strawdev/poppet",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "turbo run dev",
+		"build": "turbo run build",
+		"gen": "turbo run gen",
+		"typecheck": "turbo run typecheck",
+		"lint": "turbo run lint --concurrency=1 && oxlint .",
+		"test": "turbo run test",
+		"verify": "turbo run typecheck lint test build --concurrency=1",
+		"verify:full": "CI=1 pnpm verify && CI=1 pnpm exec knip --reporter compact",
+		"lintfix": "oxfmt --write . && oxlint --fix .",
+		"prepare": "husky"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@tanstack/router-plugin": "latest",
+		"@types/node": "^22.10.2",
+		"@types/react": "^19.2.0",
+		"@types/react-dom": "^19.2.0",
+		"@typescript/native-preview": "7.0.0-dev.20260502.1",
+		"@vitejs/plugin-react": "^6.0.1",
+		"husky": "^9.1.7",
+		"jsdom": "^28.1.0",
+		"knip": "^6.0.4",
+		"lint-staged": "^16.4.0",
+		"oxfmt": "^0.42.0",
+		"oxlint": "^1.57.0",
+		"turbo": "^2.5.4",
+		"typescript": "^5.9.3",
+		"vite": "^8.0.0",
+		"vitest": "^4.1.5"
+	},
+	"lint-staged": {
+		"*.{ts,tsx,js,jsx,css,json,jsonc}": "oxfmt --write",
+		"*.{ts,tsx,js,jsx}": "oxlint --fix"
+	},
+	"packageManager": "pnpm@11.1.2+sha512.415a1cc25974731e75455c1468371be74c5aa5fb7621b50d4056d222451609f11412f23fd602e6169f1e060466641f798597e1be961a10688836a67b16569499"
+}

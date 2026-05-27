@@ -1,0 +1,12 @@
+node_modules
+.DS_Store
+dist
+dist-ssr
+apps/*/dist
+packages/*/dist
+*.local
+.env
+.cache
+.tanstack
+.turbo
+temp/*

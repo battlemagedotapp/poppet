@@ -1,0 +1,29 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"jsx": "react-jsx",
+		"useDefineForClassFields": true,
+		"lib": ["ES2022", "ESNext.Disposable", "DOM", "DOM.Iterable"],
+		"module": "ESNext",
+		"rootDir": "../../../../",
+		"skipLibCheck": true,
+		"allowJs": false,
+		"moduleResolution": "bundler",
+		"paths": {
+			"@strawdev/poppet-config": ["../../../../packages/core/config"],
+			"@strawdev/poppet-config/*": ["../../../../packages/core/config/*"],
+			"@strawdev/app-client": ["../../../../packages/clients/app-client/src/index.ts"],
+			"@strawdev/app-service": ["../../../../apps/services/app-service/src/index.ts"],
+			"@strawdev/ui": ["../../../../packages/ui/src/index.ts"]
+		},
+		"allowImportingTsExtensions": true,
+		"verbatimModuleSyntax": true,
+		"moduleDetection": "force",
+		"noEmit": true,
+		"strict": true,
+		"noUnusedLocals": true,
+		"noUnusedParameters": true,
+		"noFallthroughCasesInSwitch": true,
+		"noUncheckedSideEffectImports": true
+	}
+}

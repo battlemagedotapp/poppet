@@ -1,0 +1,9 @@
+packages:
+  - "apps/*"
+  - "apps/services/*"
+  - "packages/core/*"
+  - "packages/clients/*"
+  - "packages/*"
+allowBuilds:
+  esbuild: true
+  sharp: true
