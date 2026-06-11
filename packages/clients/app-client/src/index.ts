@@ -1,8 +1,7 @@
-import type { AppType } from "@strawdev/app-service"
-import { hc } from "hono/client"
-
-export const createAppClient = (baseUrl: string) => {
-	return hc<AppType>(baseUrl)
-}
-
-export type { AppType }
+export type {
+	CreateStarterNoteInput,
+	StarterNote,
+	StarterNoteRow,
+} from "@strawdev/contracts/starter"
+export type { StarterResource, StarterResourceKind } from "@strawdev/contracts/resource"
+export type { StarterWorkspace } from "@strawdev/contracts/workspace"

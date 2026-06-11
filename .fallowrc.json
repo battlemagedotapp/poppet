@@ -1,0 +1,13 @@
+{
+	"$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+	"entry": [
+		"apps/*/src/main.tsx",
+		"apps/*/src/routes/**/*.{ts,tsx}",
+		"doctor.config.ts",
+		"package.json",
+		"turbo.json"
+	],
+	"ignorePatterns": ["**/dist/**", ".turbo/**"],
+	"publicPackages": ["@strawdev/ui"],
+	"ignoreExportsUsedInFile": true
+}

@@ -1,0 +1,111 @@
+services:
+  poppet-postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    command:
+      [
+        "postgres",
+        "-c",
+        "wal_level=logical",
+        "-c",
+        "max_replication_slots=10",
+        "-c",
+        "max_wal_senders=10",
+      ]
+    environment:
+      POSTGRES_DB: poppet_app
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_USER: postgres
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d poppet_app"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  poppet-valkey:
+    image: valkey/valkey:8-alpine
+    restart: unless-stopped
+    command: valkey-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - valkey-data:/data
+
+  poppet-minio:
+    image: minio/minio:RELEASE.2025-04-22T22-12-26Z
+    restart: unless-stopped
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+    healthcheck:
+      test: ["CMD", "mc", "ready", "local"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - minio-data:/data
+
+  poppet-meilisearch:
+    image: getmeili/meilisearch:v1.18
+    restart: unless-stopped
+    environment:
+      MEILI_ENV: development
+      MEILI_MASTER_KEY: ${MEILI_MASTER_KEY}
+      MEILI_NO_ANALYTICS: "true"
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "-q", "http://127.0.0.1:7700/health"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    volumes:
+      - meilisearch-data:/meili_data
+
+  poppet-electric:
+    image: electricsql/electric:latest
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: ${DATABASE_URL}
+      ELECTRIC_SECRET: ${ELECTRIC_SECRET:?ELECTRIC_SECRET is required}
+    depends_on:
+      poppet-postgres:
+        condition: service_healthy
+
+  poppet-api:
+    build:
+      context: ../..
+      dockerfile: apps/api/Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ${POPPET_RUNTIME_ENV_FILE:?POPPET_RUNTIME_ENV_FILE is required}
+    depends_on:
+      poppet-electric:
+        condition: service_started
+      poppet-meilisearch:
+        condition: service_healthy
+      poppet-minio:
+        condition: service_healthy
+      poppet-postgres:
+        condition: service_healthy
+      poppet-valkey:
+        condition: service_healthy
+    healthcheck:
+      test:
+        [
+          "CMD-SHELL",
+          'node -e "fetch(''http://127.0.0.1:6201/health'').then((r)=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"',
+        ]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+
+volumes:
+  meilisearch-data:
+  minio-data:
+  postgres-data:
+  valkey-data:

@@ -1,7 +1,20 @@
 {
 	"extends": "../../packages/core/config/typescript/tsconfig.app.json",
 	"compilerOptions": {
-		"outDir": "./dist"
+		"outDir": "./dist",
+		"paths": {
+			"@/*": ["./src/*"],
+			"@strawdev/app-client": ["../../packages/clients/app-client/src/index.ts"],
+			"@strawdev/auth-client": ["../../packages/clients/auth-client/src/index.ts"],
+			"@strawdev/contracts": ["../../packages/core/contracts/src/index.ts"],
+			"@strawdev/contracts/*": ["../../packages/core/contracts/src/*"],
+			"@strawdev/locale": ["../../packages/core/locale/src/index.ts"],
+			"@strawdev/locale/*": ["../../packages/core/locale/src/*"],
+			"@strawdev/poppet-config": ["../../packages/core/config"],
+			"@strawdev/poppet-config/*": ["../../packages/core/config/*"],
+			"@strawdev/ui": ["../../packages/ui/src/index.ts"],
+			"@strawdev/ui/*": ["../../packages/ui/src/*"]
+		}
 	},
 	"include": ["src/**/*"]
 }

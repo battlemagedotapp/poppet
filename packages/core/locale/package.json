@@ -1,0 +1,29 @@
+{
+	"name": "@strawdev/locale",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts",
+		"./i18n/locale": "./src/i18n/locale/index.ts",
+		"./i18n/react": "./src/i18n/react/index.ts",
+		"./paraglide/messages.js": "./src/paraglide/messages.js",
+		"./paraglide/runtime.js": "./src/paraglide/runtime.js"
+	},
+	"scripts": {
+		"gen": "node scripts/compile-paraglide.mjs",
+		"typecheck": "tsgo --noEmit -p tsconfig.json",
+		"test": "vitest run"
+	},
+	"devDependencies": {
+		"@strawdev/poppet-config": "workspace:*",
+		"@testing-library/react": "^16.3.0",
+		"@types/react": "^19.2.15",
+		"@types/react-dom": "^19.2.3",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
+	},
+	"peerDependencies": {
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
+	}
+}

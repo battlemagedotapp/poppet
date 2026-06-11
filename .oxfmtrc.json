@@ -14,7 +14,7 @@
 		"spec/**",
 		"dist/**",
 		"apps/*/dist/**",
-		"packages/*/dist/**",
+		"packages/**/dist/**",
 		"report/**",
 		"pnpm-lock.yaml",
 		"**/routeTree.gen.ts"

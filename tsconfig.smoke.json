@@ -1,0 +1,7 @@
+{
+	"extends": "./packages/core/config/typescript/tsconfig.base.json",
+	"compilerOptions": {
+		"types": ["node", "@playwright/test"]
+	},
+	"include": ["playwright.config.ts", "tests/smoke/**/*.ts", "packages/testing/smoke/src/**/*.ts"]
+}

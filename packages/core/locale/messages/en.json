@@ -1,0 +1,22 @@
+{
+	"app_name": "Poppet",
+	"checking_session": "Checking session",
+	"create_account": "Create account",
+	"create_note": "Create note",
+	"email": "Email",
+	"enter_a_note": "Enter a note",
+	"enter_your_email": "Enter your email",
+	"enter_your_name": "Enter your name",
+	"enter_your_password": "Enter your password",
+	"language": "Language",
+	"loading": "Loading",
+	"name": "Name",
+	"notes": "Notes",
+	"password": "Password",
+	"protected_workspace": "Protected workspace",
+	"sign_in": "Sign in",
+	"sign_out": "Sign out",
+	"signed_in_as_email": "Signed in as {email}",
+	"starter_description": "A local-first app platform starter with auth, contracts, mutations, and live collections.",
+	"welcome_back": "Welcome back"
+}

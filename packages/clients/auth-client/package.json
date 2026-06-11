@@ -1,0 +1,24 @@
+{
+	"name": "@strawdev/auth-client",
+	"private": true,
+	"type": "module",
+	"exports": {
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"test": "vitest run",
+		"typecheck": "tsgo --noEmit -p tsconfig.json"
+	},
+	"dependencies": {
+		"better-auth": "~1.6.11"
+	},
+	"devDependencies": {
+		"@strawdev/poppet-config": "workspace:*",
+		"@types/react": "^19.2.14",
+		"react": "^19.2.6",
+		"typescript": "^5.9.3"
+	},
+	"peerDependencies": {
+		"react": "^19.2.6"
+	}
+}

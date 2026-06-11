@@ -6,10 +6,13 @@
 		".": "./src/index.ts"
 	},
 	"scripts": {
+		"test": "vitest run --passWithNoTests",
 		"typecheck": "tsgo --noEmit -p tsconfig.json"
 	},
+	"dependencies": {
+		"@strawdev/contracts": "workspace:*"
+	},
 	"devDependencies": {
-		"@strawdev/app-service": "workspace:*",
 		"@strawdev/poppet-config": "workspace:*"
 	}
 }

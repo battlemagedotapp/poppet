@@ -3,15 +3,24 @@
 	"private": true,
 	"type": "module",
 	"scripts": {
-		"dev": "vite",
 		"build": "vite build",
+		"test": "vitest run --passWithNoTests",
 		"typecheck": "tsgo --noEmit -p tsconfig.json"
 	},
 	"dependencies": {
-		"@strawdev/app-client": "workspace:*",
-		"@strawdev/ui": "workspace:*"
+		"@strawdev/auth-client": "workspace:*",
+		"@strawdev/contracts": "workspace:*",
+		"@strawdev/locale": "workspace:*",
+		"@strawdev/ui": "workspace:*",
+		"@tanstack/db": "0.6.8",
+		"@tanstack/electric-db-collection": "0.3.6",
+		"@tanstack/react-db": "0.1.86",
+		"@tanstack/react-router": "^1.170.8",
+		"react": "^19.2.6",
+		"react-dom": "^19.2.6"
 	},
 	"devDependencies": {
-		"@strawdev/poppet-config": "workspace:*"
+		"@strawdev/poppet-config": "workspace:*",
+		"@tailwindcss/vite": "^4.3.0"
 	}
 }

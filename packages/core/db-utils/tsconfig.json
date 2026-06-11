@@ -1,0 +1,7 @@
+{
+	"extends": "@strawdev/poppet-config/typescript/tsconfig.package.json",
+	"compilerOptions": {
+		"outDir": "./dist"
+	},
+	"include": ["src/**/*"]
+}

@@ -1,0 +1,31 @@
+services:
+  poppet-postgres:
+    ports:
+      - "6202:5432"
+
+  poppet-valkey:
+    ports:
+      - "6204:6379"
+
+  poppet-minio:
+    ports:
+      - "6205:9000"
+      - "6206:9001"
+
+  poppet-meilisearch:
+    ports:
+      - "6207:7700"
+
+  poppet-electric:
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@poppet-postgres:5432/poppet_app
+    ports:
+      - "6203:3000"
+
+  poppet-api:
+    environment:
+      DATABASE_URL: postgres://postgres:${POSTGRES_PASSWORD}@poppet-postgres:5432/poppet_app
+      ELECTRIC_URL: http://poppet-electric:3000
+      VALKEY_URL: redis://poppet-valkey:6379
+    ports:
+      - "6201:6201"

@@ -1,0 +1,22 @@
+{
+	"app_name": "Poppet",
+	"checking_session": "セッションを確認しています",
+	"create_account": "アカウントを作成",
+	"create_note": "ノートを作成",
+	"email": "メール",
+	"enter_a_note": "ノートを入力",
+	"enter_your_email": "メールを入力",
+	"enter_your_name": "名前を入力",
+	"enter_your_password": "パスワードを入力",
+	"language": "言語",
+	"loading": "読み込み中",
+	"name": "名前",
+	"notes": "ノート",
+	"password": "パスワード",
+	"protected_workspace": "保護されたワークスペース",
+	"sign_in": "サインイン",
+	"sign_out": "サインアウト",
+	"signed_in_as_email": "{email} としてサインイン中",
+	"starter_description": "認証、契約、ミューテーション、ライブコレクションを備えたローカルファーストのアプリ基盤スターターです。",
+	"welcome_back": "おかえりなさい"
+}

@@ -1,7 +1,0 @@
-{
-	"extends": "../../../packages/core/config/typescript/tsconfig.node.json",
-	"compilerOptions": {
-		"outDir": "./dist"
-	},
-	"include": ["src/**/*"]
-}

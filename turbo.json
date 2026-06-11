@@ -7,9 +7,16 @@
 		"packages/core/config/**"
 	],
 	"tasks": {
-		"dev": {
+		"gen": {
 			"cache": false,
-			"persistent": true
+			"inputs": [
+				"project.inlang/messages/*.json",
+				"project.inlang/**",
+				"paraglide.config.mjs",
+				"paraglide.config.d.mts",
+				"package.json"
+			],
+			"outputs": ["src/paraglide/**"]
 		},
 		"build": {
 			"dependsOn": ["^build"],

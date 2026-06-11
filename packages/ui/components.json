@@ -1,0 +1,23 @@
+{
+	"$schema": "https://ui.shadcn.com/schema.json",
+	"style": "radix-lyra",
+	"rsc": false,
+	"tsx": true,
+	"tailwind": {
+		"config": "",
+		"css": "src/style.css",
+		"baseColor": "neutral",
+		"cssVariables": true
+	},
+	"iconLibrary": "phosphor",
+	"aliases": {
+		"components": "@strawdev/ui/components",
+		"utils": "@strawdev/ui/lib/utils",
+		"hooks": "@strawdev/ui/hooks",
+		"lib": "@strawdev/ui/lib",
+		"ui": "@strawdev/ui/components"
+	},
+	"rtl": false,
+	"menuColor": "default-translucent",
+	"menuAccent": "subtle"
+}

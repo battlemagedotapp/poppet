@@ -1,0 +1,23 @@
+{
+	"name": "@strawdev/contracts",
+	"private": true,
+	"type": "module",
+	"exports": {
+		"./auth": "./src/auth.ts",
+		"./resource": "./src/resource.ts",
+		"./starter": "./src/starter.ts",
+		"./workspace": "./src/workspace.ts",
+		".": "./src/index.ts"
+	},
+	"scripts": {
+		"test": "vitest run",
+		"typecheck": "tsgo --noEmit -p tsconfig.json"
+	},
+	"dependencies": {
+		"zod": "^4.4.3"
+	},
+	"devDependencies": {
+		"@strawdev/poppet-config": "workspace:*",
+		"typescript": "^5.9.3"
+	}
+}

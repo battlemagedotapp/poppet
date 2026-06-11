@@ -1,9 +1,13 @@
 packages:
-  - "apps/*"
-  - "apps/services/*"
+  - "apps/api"
+  - "apps/web"
   - "packages/core/*"
   - "packages/clients/*"
-  - "packages/*"
+  - "packages/testing/*"
+  - "packages/ui"
 allowBuilds:
   esbuild: true
+  msgpackr-extract: true
+  msw: false
+  protobufjs: true
   sharp: true
